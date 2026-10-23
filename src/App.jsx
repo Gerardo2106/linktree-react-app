@@ -13,11 +13,14 @@ const links = [
 
 function App() {
 
-  const [theme, setTheme] = useState('dark')
+  // load the saved theme, or default to dark on a first visit
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark')
+
 
   // the class goes on <body> so the CSS color variables switch for the whole page
   useEffect(() => {
     document.body.className = theme === 'light' ? 'light' : ''
+    localStorage.setItem('theme', theme)
   }, [theme])
 
 

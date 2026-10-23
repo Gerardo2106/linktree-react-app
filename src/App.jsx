@@ -11,6 +11,17 @@ const links = [
   { title: 'Resume', url: 'https://gerardo2106.github.io/portfolio/Gerardo-Martinez-Resume.pdf', description: 'My experience and skills!' },
 ]
 
+
+// picks a greeting based on the visitor's local time
+function getGreeting() {
+  const hour = new Date().getHours()
+
+  if (hour < 12) return 'Good morning'
+  if (hour < 18) return 'Good afternoon'
+  return 'Good evening'
+}
+
+
 function App() {
 
   // load the saved theme, or default to dark on a first visit
@@ -24,6 +35,21 @@ function App() {
   }, [theme])
 
 
+  const [showIntro, setShowIntro] = useState(true)
+  // hide the intro greeting after 2 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setShowIntro(false), 2000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  // keep the if statement below the useState/useEffect lines or React will throw an error
+  if (showIntro) {
+    return (
+      <div className="intro">
+        <h1>{getGreeting()}</h1>
+      </div>
+    )
+  }
   return (
 
     <main className="container">

@@ -63,3 +63,32 @@ button:hover {
   background-color: var(--accent);
   color: var(--bg);
 }
+
+.intro {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: introFade 2.5s ease forwards;
+}
+
+.intro h1 {
+  font-size: 3rem;
+}
+
+/* fades in, holds, then fades out right as the timer ends */
+@keyframes introFade {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.container {
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

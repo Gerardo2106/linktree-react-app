@@ -1,14 +1,16 @@
 import './App.css'
 import profilePic from './assets/profile.jpeg'
 import { useState, useEffect } from 'react'
+import { FaLinkedin, FaGithub } from 'react-icons/fa'
 
 
 // links are stored as data so the list below can just loop over them
+// icon adds app icons and emoji to the links associated with them
 const links = [
-  { title: 'LinkedIn', url: 'https://www.linkedin.com/in/gerardo-martinez-929a5a324/', description: 'Connect with me!' },
-  { title: 'GitHub', url: 'https://github.com/Gerardo2106', description: 'My projects!' },
-  { title: 'Portfolio', url: 'https://gerardo2106.github.io/portfolio/', description: 'Showcase of my journey as a developer!' },
-  { title: 'Resume', url: 'https://gerardo2106.github.io/portfolio/Gerardo-Martinez-Resume.pdf', description: 'My experience and skills!' },
+  { title: 'LinkedIn', url: 'https://www.linkedin.com/in/gerardo-martinez-929a5a324/', description: 'Connect with me!', icon: <FaLinkedin /> },
+  { title: 'GitHub', url: 'https://github.com/Gerardo2106', description: 'My projects!', icon: <FaGithub /> },
+  { title: 'Portfolio', url: 'https://gerardo2106.github.io/portfolio/', description: 'Showcase of my journey as a developer!', icon: '💼' },
+  { title: 'Resume', url: 'https://gerardo2106.github.io/portfolio/Gerardo-Martinez-Resume.pdf', description: 'My experience and skills!', icon: '📄' },
 ]
 
 
@@ -67,7 +69,7 @@ function App() {
         {links.map((link) => (
           <li key={link.title}>
             <a href={link.url} target="_blank" rel="noreferrer">
-              {link.title} <p>{link.description}</p>
+              <span className="icon">{link.icon}</span> {link.title} <p>{link.description}</p>
             </a>
           </li>
         ))}

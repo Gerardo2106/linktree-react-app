@@ -47,3 +47,19 @@ li:hover {
   transform: translateY(-4px);
   background-color: rgba(255, 255, 255, 0.2);
 }
+
+button {
+  font-family: inherit;
+  background: none;
+  color: var(--text);
+  border: 2px solid var(--accent);
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--accent);
+  color: var(--bg);
+}

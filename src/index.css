@@ -11,3 +11,10 @@ body {
   background-color: var(--bg);
   color: var(--text);
 }
+
+/* when body has the light class, these override the default dark colors */
+.light {
+  --bg: #f0f7f2;
+  --text: #1a3d2b;
+  --accent: #00a86b;
+}

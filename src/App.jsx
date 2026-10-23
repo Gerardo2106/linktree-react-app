@@ -1,5 +1,6 @@
 import './App.css'
 import profilePic from './assets/profile.jpeg'
+import { useState, useEffect } from 'react'
 
 
 // links are stored as data so the list below can just loop over them
@@ -11,6 +12,15 @@ const links = [
 ]
 
 function App() {
+
+  const [theme, setTheme] = useState('dark')
+
+  // the class goes on <body> so the CSS color variables switch for the whole page
+  useEffect(() => {
+    document.body.className = theme === 'light' ? 'light' : ''
+  }, [theme])
+
+
   return (
 
     <main className="container">
@@ -33,6 +43,10 @@ function App() {
           </li>
         ))}
       </ul>
+
+      <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+        {theme === 'dark' ? 'Light mode' : 'Dark mode'}
+      </button>
 
     </main>
   )

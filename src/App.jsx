@@ -10,7 +10,7 @@ const links = [
   { title: 'LinkedIn', url: 'https://www.linkedin.com/in/gerardo-martinez-929a5a324/', description: 'Connect with me!', icon: <FaLinkedin /> },
   { title: 'GitHub', url: 'https://github.com/Gerardo2106', description: 'My projects!', icon: <FaGithub /> },
   { title: 'Portfolio', url: 'https://gerardo2106.github.io/portfolio/', description: 'Showcase of my journey as a developer!', icon: '💼' },
-  { title: 'Resume', url: 'https://gerardo2106.github.io/portfolio/resume.pdf', description: 'My experience and skills!', icon: '📄' },
+  { title: 'Resume', url: 'resume.pdf', description: 'My experience and skills!', icon: '📄' },
 ]
 
 

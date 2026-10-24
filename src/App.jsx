@@ -1,5 +1,5 @@
 import './App.css'
-import profilePic from './assets/profile.jpeg'
+import profilePic from './assets/profile.png'
 import { useState, useEffect } from 'react'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
 

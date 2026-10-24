@@ -53,7 +53,6 @@ function App() {
     )
   }
   return (
-
     <main className="container">
 
       <section className="profile">

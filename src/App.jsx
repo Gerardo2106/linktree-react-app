@@ -44,6 +44,27 @@ function App() {
     return () => clearTimeout(timer)
   }, [])
 
+  // arrow keys move between links, since Tab works differently in each browser
+  useEffect(() => {
+    function handleKeyDown(e) {
+      const linkEls = Array.from(document.querySelectorAll('ul a'))
+      const current = linkEls.indexOf(document.activeElement)
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault()
+        linkEls[(current + 1) % linkEls.length].focus()
+      }
+
+      if (e.key === 'ArrowUp') {
+        e.preventDefault()
+        linkEls[(current - 1 + linkEls.length) % linkEls.length].focus()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
+
   // keep the if statement below the useState/useEffect lines or React will throw an error
   if (showIntro) {
     return (

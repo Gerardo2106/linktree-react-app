@@ -97,3 +97,20 @@ button:hover {
   margin-right: 8px;
   vertical-align: middle;
 }
+
+/* highlight the card whenever its link is focused, whether by Tab or arrow keys */
+li:has(a:focus) {
+  transform: translateY(-4px);
+  background-color: rgba(255, 255, 255, 0.2);
+  outline: 3px solid var(--text);
+  outline-offset: 3px;
+}
+
+li a:focus-visible {
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 3px;
+}
